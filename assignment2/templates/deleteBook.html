@@ -1,0 +1,26 @@
+<html>
+	<head></head>
+
+	<body>
+
+	<h1> Delete Book </h1>
+
+	{% if book == None %}
+
+		<p>This action cannot be performed. Book not found in library.</p>
+		<a href="{{url_for('homepage')}}">Return to Homepage</a>
+
+	{% else %}
+
+		<p>Are you sure you want to delete {{book.title}}?</p>
+
+	{% endif %}
+
+	<form action="{{url_for('deleteBook', book_id=book.id)}}" method='POST'>
+		<input type='submit' value='Delete'>
+		<a href="{{url_for('homepage')}}">Cancel</a>
+	</form>
+
+	</body>
+
+</html

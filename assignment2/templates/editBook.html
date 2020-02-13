@@ -1,0 +1,27 @@
+<html>
+	<head></head>
+	<body>
+
+	<h1> Edit Book </h1>
+
+	{% if book == None %}
+
+		<p>This action cannot be performed. Book not found in library.</p>
+		<a href="{{url_for('homepage')}}">Cancel</a>
+
+	{% else %}
+
+		<p>Name: {{book.title}}
+		<br> 
+		<form action="{{url_for('editBook', book_id=book.id)}}" method='POST'>
+		
+		<input type='text' placeholder="{{book.title}}" ='book_name' name='book_name'>
+		<input type='submit' value='Edit'>
+		<a href="{{url_for('homepage')}}">Cancel</a>
+	</form>
+		</p>
+
+	{% endif %}
+	</body>
+
+</html
